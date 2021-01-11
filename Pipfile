@@ -11,3 +11,6 @@ python_version = "3.7"
 [packages]
 django = "==2.1"
 pillow = "*"
+gunicorn = "*"
+django-heroku = "*"
+python-decouple = "*"
