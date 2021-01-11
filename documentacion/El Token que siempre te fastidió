@@ -1,0 +1,4 @@
+En el minuto 20:08
+
+habla de que tienes(como ya sospechabas) usar el csrf token(creo que se escribe así)) en un form
+pero no lo tenemos por que en este caso estamos usando javascript(Este es el erroe que da 403 Forbidden)

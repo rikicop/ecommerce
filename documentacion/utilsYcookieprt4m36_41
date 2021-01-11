@@ -1,0 +1,3 @@
+Esto es para no repetir tanto el código de cookie en todas las vistas
+
+vas a importar utils a views

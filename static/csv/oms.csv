@@ -1,0 +1,14 @@
+variable,dataset,definition
+budget_cpp_dstb,Budget,"Average cost of drugs budgeted per patient for drug-susceptible TB treatment, excluding" 
+budget_cpp_mdr,Budget,"Average cost of drugs budgeted per patient for MDR-TB treatment, excluding bu"
+budget_cpp_tpt,Budget,"Average cost of drugs budgeted per patient, excluding buffer stock (US Dollars)"
+budget_cpp_xdr,Budget,"Average cost of drugs budgeted per patient, excluding buffer stock (US Dollars)"
+budget_fld,Budget,Budget required for drugs to treat drug-susceptible TB (US Dollars)
+budget_lab,Budget,"Budget required for laboratory infrastructure, equipment and supplies (US Dollars)"
+budget_mdrmgt,Budget,Budget required for programme costs to treat drug-resistant TB (US Dollars)
+budget_orsrvy,Budget,Budget required for operational research and surveys (US Dollars)
+budget_oth,Budget,Budget required for all other budget line items (US Dollars)
+budget_patsup,Budget,Budget required for patient support (US Dollars)
+budget_prog,Budget,Budget required for programme costs to treat drug-susceptible TB (US Dollars)
+budget_sld,Budget,Budget required for drugs to treat drug-resistant TB (US Dollars)sex
+
