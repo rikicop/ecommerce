@@ -1,0 +1,57 @@
+1. Primero
+   Como introducir un dato ?
+   
+   a. Tienes que usar paypal sandbox 
+        https://developer.paypal.com/   apps and apli... | sandbox negocion123@gmail.com   
+
+         comenta si puedes el live account
+
+        puedes usar como cliente la que viene por defecto de paypal
+         
+        Despues los datos de cantidades compradas te van a aparecer en: 
+        
+          http://192.168.0.102:8000/admin/store/orderitem/ 
+
+            en quantity se pueden ver
+            
+        
+       1. necesito quantity de un producto particular , quisera 
+          tomar products.stock y restale OrderItem.quantity  
+       
+       2. O la otra opción es tomarlo de cart cookie  
+
+       3. Crear una funcion js en checkout.html que tome los datos de la cookie al hacer el payment
+          y se los envie a un view
+
+
+   b. Lo mas posible es que necesites usar la función "function submitFormData() {"
+      que está en checkout.html, por que ese valor debería actualizarse
+      después de comprar
+   
+
+   c. Cantidad item/product en particular donde está?? tienes que identificarla
+      para extraerla 
+    
+      El se puede ver en consola y está almacenado en cookie: {"1":{"quantity":2}}
+      
+      * Consola:                     
+        
+            Cart:  
+             Object { 1: {…} }
+             cart:57:12
+
+      * Cookie:
+
+            cart:"{"1":{"quantity":2},"3":{"quantity":1}}" ---> donde 3 corresponde al id que sería el libro
+
+  
+  
+   d. Tengo primero que sacar el stock y restarlo con la cantidad de producto 
+      que compro(del item/product en particular) 
+
+  
+   e. En enviar datos tienes ejemplo, pero en este caso es un Objects de django
+
+   
+   
+   

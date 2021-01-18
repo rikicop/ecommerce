@@ -4,13 +4,13 @@
 {% block content%}
 
 <div class="row">
-  
+
   {% for product in products  %}
 
   <div class="col-lg-4">
-    
-    <img class="thumbnail" src="{{product.image_url|default_if_none:'#'}}">
-    
+
+    <img class="thumbnail" src="{{product.image|default_if_none:'#'}}">
+
     <div class="box-element product">
       <h6><strong>{{product.name}}</strong></h6>
       <hr>
@@ -20,15 +20,14 @@
        </button>
       <a class="btn btn-outline-success" href="#">View</a>
       <h4 style="display: inline-block; float: right">
-	<strong>${{ product.price|floatformat:2  }}</strong>
+	    <strong>${{ product.price|floatformat:2 }}</strong>
       </h4>
+      <h6 style="display: inline-block; float: center">Disponible: {{ product.stock }}</h6>
     </div>
 
   </div>
-  {% endfor %} 
+  {% endfor %}
 
 </div>
 
 {% endblock content%}
-
-

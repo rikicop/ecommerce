@@ -45,9 +45,9 @@
       <small>Paypal Options</small>
       <div id="paypal-button-container"></div>
       <!--<button id="make-payment"> Make Payment </button>-->
-      
+
     </div>
-    
+
   </div>
 
   <div class="col-lg-6">
@@ -69,9 +69,14 @@
     </div>
   </div>
 </div>
-<!-- Esto para desabilitar la tarjeta de crédito y paypalcredit  disable-funding=credit,card 
-En client-id coloco la id que se genero al crear la app de bussines en paypal -->
-<script src="https://www.paypal.com/sdk/js?client-id=AYIICq8gAA_H0Ho3_oSQV9oLUmVcS6LPQ5uwGaPAffFxXTcgwoCjS3j_PftXjQSCAamah8Va8NWMhm_d&currency=USD&disable-funding=credit,card"></script>
+ <!-- Esto para desabilitar la tarjeta de crédito y paypalcredit  disable-funding=credit,card
+En client-id coloco la id que se genero al crear la app de bussines en paypal  -->
+
+<!-- Este es Live -->
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=AYIICq8gAA_H0Ho3_oSQV9oLUmVcS6LPQ5uwGaPAffFxXTcgwoCjS3j_PftXjQSCAamah8Va8NWMhm_d&currency=USD&disable-funding=credit,card"></script> -->
+
+ <!-- Sandbox -->
+ <script src="https://www.paypal.com/sdk/js?client-id=AfjTC_9ZQGv4FpUV1utVleTUrYIHj81jW2kN7o8jRqdiUYOfe6ywYC8U-e1e-fbtrHkAypw2ptDxugR0&currency=USD&disable-funding=credit,card"></script> 
 
 <script>
   var total = '{{order.get_cart_total}}'
@@ -96,7 +101,7 @@ En client-id coloco la id que se genero al crear la app de bussines en paypal --
       onApprove: function(data, actions) {
 	  return actions.order.capture().then(function(details) {
 	      submitFormData()
-	     
+
 	  });
       }
 
@@ -107,7 +112,7 @@ En client-id coloco la id que se genero al crear la app de bussines en paypal --
 <script type="text/javascript">
 
   var shipping = '{{ order.shipping  }}'
-  
+
   if(shipping == 'False'){
       document.getElementById('shipping-info').innerHTML = ''
   }
@@ -116,18 +121,18 @@ En client-id coloco la id que se genero al crear la app de bussines en paypal --
 
       document.getElementById('user-info').innerHTML = ''
   }
-  
+
   if (shipping == 'False' && user != 'AnonymousUser'){
       document.getElementById('form-wrapper').classList.add("hidden");
       document.getElementById('payment-info').classList.remove("hidden");
 
   }
-  
+
   var form = document.getElementById('form')
 
   csrftoken = form.getElementsByTagName("input")[0].value
   console.log('Newtoken:', form.getElementsByTagName("input")[0].value)
-  
+
   form.addEventListener('submit', function(e){
       e.preventDefault()
       console.log('Form Submitted...')
@@ -139,8 +144,8 @@ En client-id coloco la id que se genero al crear la app de bussines en paypal --
       submitFormData()
   })*/
 
-  
-  
+
+
   function submitFormData() {
       console.log('Payment button clicked')
 
@@ -169,17 +174,17 @@ En client-id coloco la id que se genero al crear la app de bussines en paypal --
 
       var url = '/process_order/'
       fetch(url,{
-	  method:'POST',
-	  headers:{
-	      'Content-Type': 'application/json',
-              'X-CSRFToken': csrftoken,
-	  },
-	  body:JSON.stringify({'form': userFormData , 'shipping': shippingInfo})
-      })
-	  .then((response)=> response.json())
-          .then((data) => {
-	      console.log('Success:' , data);
-	      alert('Transaction Completed');
+    	  method:'POST',
+    	  headers:{
+    	      'Content-Type': 'application/json',
+                  'X-CSRFToken': csrftoken,
+    	  },
+    	  body:JSON.stringify({'form': userFormData , 'shipping': shippingInfo})
+          })
+    	  .then((response)=> response.json())
+              .then((data) => {
+    	      console.log('Success:' , data);
+    	      alert('Transaction Completed');
 
 	      //Aquí reinicias la cookie cart después del payment
 	      //Es decir después de llamar a submitFormData()

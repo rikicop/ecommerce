@@ -61,6 +61,7 @@ def updateItem(request):
      return JsonResponse('Item was added', safe=False)
 
 def processOrder(request):
+     product=Product.objects.get(name='zapatos')
      transaction_id = datetime.datetime.now().timestamp()
      # Esto es necesarion para tomar después el
      # formulario del Body
@@ -74,6 +75,11 @@ def processOrder(request):
          
      else:
           customer, order = guestOrder(request,data)
+          print('***Hola soy processOrder y Corrí correctamente**')
+          print('product stock de zapatos:',  product.stock )
+          cart_cookie  = request.COOKIES['cart']
+          cart_json = json.loads(cart_cookie)
+          print('El carrito: ', cart_json)
 
           
      total = float(data['form']['total'])
@@ -96,6 +102,7 @@ def processOrder(request):
      
      return JsonResponse('Payment complete!', safe=False)
 
+      
 
 
 #Esto no es del ecommerceoriginal

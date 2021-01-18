@@ -88,6 +88,44 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "e7v7k1yia47tuhyj1kmktiutbk95ftd6",
+    "fields": {
+        "session_data": "ZjljYzVlZTQ3NWFkZGU5N2M1NGZhNTdiNjI4ZTgxNDAxN2EzYzk3Nzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJkMjdkOWRhZDUyMzdmODQ4OTc5NTU2Y2IzMDI3OWE3MGQ1ZjFjMWE0In0=",
+        "expire_date": "2021-01-26T20:23:01.411Z"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+        "name": "headphones",
+        "price": "20.00",
+        "digital": false,
+        "image": "headphones.jpeg"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+        "name": "zapatos",
+        "price": "23.00",
+        "digital": false,
+        "image": "zapatos.jpg"
+    }
+},
+{
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+        "name": "ser y tiempo",
+        "price": "11.00",
+        "digital": false,
+        "image": "book.jpeg"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -481,6 +519,63 @@
         "name": "Can view shipping address",
         "content_type": 11,
         "codename": "view_shippingaddress"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$120000$ZAGWTML6Oc7r$Rhe3BTwqVUzPUajaNZO7JPDKJKwGHBQCSSKiBqWLLWw=",
+        "last_login": "2021-01-13T16:27:13.484Z",
+        "is_superuser": true,
+        "username": "ricardo",
+        "first_name": "",
+        "last_name": "",
+        "email": "ricardo9285@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-01-12T20:22:42.868Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-01-13T16:27:51.086Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "headphones",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2021-01-13T16:29:09.547Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "zapatos",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2021-01-13T16:29:27.789Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "ser y tiempo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 }
 ]
